@@ -1,0 +1,239 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dorm Dish makes college cooking simple with quick, affordable, healthy recipes and easy meal prep ideas.">
+  <title>Dorm Dish | College Cooking Made Easy</title>
+  <style>
+    :root {
+      --cream: #fffaf1;
+      --green: #284b38;
+      --orange: #ed8956;
+      --yellow: #f5d88b;
+      --text: #292e29;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+    .notice {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+    header, main, footer {
+      width: min(1080px, 100%);
+      margin: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    header {
+      padding-top: 22px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #b8572e; text-decoration: underline; }
+    a:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .hero {
+      background: var(--yellow);
+      border-radius: 24px;
+      padding: 58px 42px;
+      margin: 14px 0 44px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--green);
+    }
+    h1, h2, h3 { line-height: 1.2; color: var(--green); }
+    h1 { font-size: clamp(36px, 6vw, 62px); letter-spacing: -2px; max-width: 700px; margin: 12px 0; }
+    h2 { font-size: 30px; letter-spacing: -0.8px; }
+    h3 { font-size: 20px; }
+    .hero p { max-width: 600px; font-size: 18px; }
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 12px 19px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+    .button:hover { background: #41664f; }
+    .section { margin: 42px 0; }
+    .section-intro { max-width: 650px; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+    .card {
+      background: var(--white);
+      padding: 24px;
+      border: 1px solid #e9e1d4;
+      border-radius: 16px;
+    }
+    .card .emoji { font-size: 38px; }
+    .tag {
+      display: inline-block;
+      background: #f9e8d9;
+      color: #814426;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .card a { color: var(--green); font-weight: bold; }
+    .tip {
+      background: #e9f0e7;
+      border-radius: 18px;
+      padding: 28px;
+      margin: 40px 0;
+    }
+    footer {
+      background: var(--green);
+      color: white;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      width: 100%;
+      max-width: none;
+      margin-top: 55px;
+    }
+    footer .footer-inner { max-width: 1032px; margin: auto; padding: 0 24px; }
+    footer a { color: white; }
+    footer .notice { padding: 14px 0 0; font-size: 13px; }
+    @media (max-width: 700px) {
+      header { align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px 16px; }
+      .hero { padding: 36px 24px; }
+      .cards { grid-template-columns: 1fr; }
+      .section { margin: 32px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+
+  <header>
+    <a class="logo" href="index.html">dorm dish<span style="color:var(--orange)">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="quick-recipes.html">Quick Recipes</a>
+      <a href="meal-prep.html">Meal Prep</a>
+      <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Good food. Small budget. Big college energy.</div>
+      <h1>Your next favorite meal starts here.</h1>
+      <p>College life is busy. Dinner doesn't have to be complicated or expensive. Dorm Dish brings you simple recipes, realistic grocery lists, and meals that work with student schedules and budgets.</p>
+      <a class="button" href="quick-recipes.html">Find your next meal →</a>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">Made for student life</div>
+      <h2>What are you hungry for?</h2>
+      <p class="section-intro">Whether you have ten minutes between classes or a Sunday afternoon to get organized, there's a starting point for you.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🍳</div>
+          <span class="tag">10–20 minutes</span>
+          <h3>Quick & Easy Recipes</h3>
+          <p>Simple ingredients, minimal cleanup, and satisfying meals for nights when your homework pile is bigger than your appetite.</p>
+          <a href="quick-recipes.html">Explore quick recipes →</a>
+        </article>
+
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🥡</div>
+          <span class="tag">Plan ahead</span>
+          <h3>Meal Prep Made Simple</h3>
+          <p>Cook once and eat well throughout the week with flexible bowls, make-ahead breakfasts, and easy storage tips.</p>
+          <a href="meal-prep.html">Explore meal prep →</a>
+        </article>
+
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🥑</div>
+          <span class="tag">Budget friendly</span>
+          <h3>Healthy on a Budget</h3>
+          <p>Build balanced meals with affordable staples like beans, oats, rice, frozen vegetables, and eggs.</p>
+          <a href="healthy-budget-meals.html">Explore budget meals →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="tip">
+      <div class="eyebrow">The Dorm Dish philosophy</div>
+      <h2>You don't need a chef's kitchen.</h2>
+      <p>A microwave, a skillet, a cutting board, and a few dependable pantry staples can go a long way. Start with what you have, swap ingredients when needed, and make each recipe your own.</p>
+    </section>
+
+    <section class="section">
+      <div class="eyebrow">Your student kitchen starter pack</div>
+      <h2>Five staples worth keeping around</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Rice & oats</h3>
+          <p>Inexpensive foundations for breakfast bowls, burrito bowls, and quick dinners.</p>
+        </article>
+        <article class="card">
+          <h3>Beans & eggs</h3>
+          <p>Convenient sources of protein that work in scrambles, wraps, salads, and bowls.</p>
+        </article>
+        <article class="card">
+          <h3>Frozen vegetables</h3>
+          <p>Easy to portion, long-lasting, and ready for stir-fries, pasta, and soups.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="logo" href="index.html" style="color:white">dorm dish.</a>
+      <p>Student-friendly recipes for real-life schedules.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="quick-recipes.html">Quick Recipes</a>
+        <a href="meal-prep.html">Meal Prep</a>
+        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+      </nav>
+      <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+    </div>
+  </footer>
+</body>
+</html>
+```
