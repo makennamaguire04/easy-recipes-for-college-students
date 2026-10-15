@@ -1,0 +1,200 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover quick, easy recipes for college students, including cheesy quesadillas, peanut noodles, and egg fried rice.">
+  <title>Quick & Easy Recipes | Dorm Dish</title>
+  <style>
+    :root { --cream:#fffaf1; --green:#284b38; --orange:#ed8956; --yellow:#f5d88b; --text:#292e29; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--cream); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
+    .notice { background:var(--green); color:white; padding:12px 20px; text-align:center; font-size:13px; }
+    header, main { width:min(1080px,100%); margin:auto; padding-left:24px; padding-right:24px; }
+    header { padding-top:22px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .logo { color:var(--green); text-decoration:none; font-size:30px; font-weight:900; letter-spacing:-1.5px; }
+    nav { display:flex; flex-wrap:wrap; gap:10px 18px; }
+    nav a { color:var(--green); text-decoration:none; font-size:14px; font-weight:bold; }
+    nav a:hover { color:#b8572e; text-decoration:underline; }
+    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
+    h1,h2,h3 { color:var(--green); line-height:1.2; }
+    h1 { font-size:clamp(36px,6vw,56px); letter-spacing:-1.8px; margin:12px 0; }
+    h2 { font-size:28px; letter-spacing:-.5px; }
+    h3 { font-size:21px; }
+    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:800; }
+    .hero { background:var(--yellow); border-radius:24px; padding:44px 36px; margin:14px 0 36px; }
+    .hero p { max-width:680px; font-size:17px; }
+    .recipe { background:white; border:1px solid #e9e1d4; border-radius:16px; padding:26px; margin:22px 0; }
+    .recipe-top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+    .tag { background:#f9e8d9; color:#814426; border-radius:20px; padding:5px 11px; font-size:12px; font-weight:bold; }
+    .columns { display:grid; grid-template-columns:1fr 1.5fr; gap:28px; }
+    ul,ol { padding-left:22px; }
+    li { margin-bottom:7px; }
+    .note { background:#e9f0e7; border-radius:12px; padding:15px 18px; margin-top:18px; }
+    .tip { background:#fff0df; padding:24px; border-radius:16px; margin:35px 0; }
+    footer { background:var(--green); color:white; padding:30px 24px; margin-top:50px; }
+    .footer-inner { max-width:1032px; margin:auto; }
+    footer a { color:white; }
+    footer .notice { padding:14px 0 0; font-size:13px; }
+    @media(max-width:700px) {
+      header { align-items:flex-start; flex-direction:column; }
+      .hero { padding:30px 22px; }
+      .columns { grid-template-columns:1fr; gap:8px; }
+      .recipe { padding:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+
+  <header>
+    <a class="logo" href="index.html">dorm dish<span style="color:var(--orange)">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="quick-recipes.html" aria-current="page">Quick Recipes</a>
+      <a href="meal-prep.html">Meal Prep</a>
+      <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Hungry now? We've got you.</div>
+      <h1>Quick, easy recipes for college students</h1>
+      <p>When you're balancing lectures, work, friends, and late-night study sessions, cooking should feel manageable. These three recipes use everyday ingredients and take about 10–20 minutes to make.</p>
+      <p><strong>Kitchen basics:</strong> A skillet, a pot, a microwave, and a few pantry staples will cover most of these meals.</p>
+    </section>
+
+    <article class="recipe">
+      <div class="recipe-top">
+        <div>
+          <div class="eyebrow">Recipe 01</div>
+          <h2>Cheesy Black Bean Quesadillas</h2>
+        </div>
+        <span class="tag">15 minutes · Serves 2</span>
+      </div>
+      <p>Crispy on the outside, melty in the middle, and easy to customize with whatever vegetables are in your fridge.</p>
+      <div class="columns">
+        <div>
+          <h3>Ingredients</h3>
+          <ul>
+            <li>2 large flour tortillas</li>
+            <li>1 cup canned black beans, drained and rinsed</li>
+            <li>1 cup shredded cheese</li>
+            <li>1/2 bell pepper, diced</li>
+            <li>1/2 teaspoon taco seasoning</li>
+            <li>1 teaspoon oil</li>
+            <li>Salsa or plain yogurt for serving</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Instructions</h3>
+          <ol>
+            <li>Mash half the black beans with a fork and mix with the remaining beans, diced pepper, and taco seasoning.</li>
+            <li>Place a tortilla in a lightly oiled skillet over medium heat. Add half the cheese and half the bean mixture to one side.</li>
+            <li>Fold the tortilla in half and cook for 2–3 minutes per side until golden and the cheese melts.</li>
+            <li>Repeat with the second tortilla. Cut into wedges and serve with salsa or plain yogurt.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="note"><strong>Student hack:</strong> Use frozen peppers or leftover cooked vegetables to reduce prep time and food waste.</div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-top">
+        <div>
+          <div class="eyebrow">Recipe 02</div>
+          <h2>10-Minute Peanut Noodles</h2>
+        </div>
+        <span class="tag">10–15 minutes · Serves 2</span>
+      </div>
+      <p>A creamy, savory noodle bowl with a little sweetness. Add vegetables for extra color and crunch.</p>
+      <div class="columns">
+        <div>
+          <h3>Ingredients</h3>
+          <ul>
+            <li>6 ounces spaghetti or noodles</li>
+            <li>2 tablespoons peanut butter</li>
+            <li>1 tablespoon soy sauce</li>
+            <li>1 teaspoon honey or maple syrup</li>
+            <li>1 teaspoon lime juice or vinegar</li>
+            <li>2–4 tablespoons warm water</li>
+            <li>1 cup shredded carrots or sliced cucumber</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Instructions</h3>
+          <ol>
+            <li>Cook noodles according to the package directions. Reserve a little cooking water before draining.</li>
+            <li>Whisk peanut butter, soy sauce, honey, lime juice, and warm water in a bowl until smooth.</li>
+            <li>Toss the warm noodles with the sauce, adding a splash of cooking water if needed.</li>
+            <li>Top with carrots or cucumber. Add chili flakes if you like a little heat.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="note"><strong>Student hack:</strong> Frozen edamame makes an easy protein addition. Cook it according to the package instructions before adding.</div>
+    </article>
+
+    <article class="recipe">
+      <div class="recipe-top">
+        <div>
+          <div class="eyebrow">Recipe 03</div>
+          <h2>Easy Egg Fried Rice</h2>
+        </div>
+        <span class="tag">15 minutes · Serves 2</span>
+      </div>
+      <p>The ultimate leftover makeover. Day-old rice works especially well because it is less moist and fries more easily.</p>
+      <div class="columns">
+        <div>
+          <h3>Ingredients</h3>
+          <ul>
+            <li>2 cups cooked, chilled rice</li>
+            <li>2 eggs</li>
+            <li>1 cup frozen mixed vegetables</li>
+            <li>1 tablespoon soy sauce</li>
+            <li>1 tablespoon oil</li>
+            <li>1 green onion, sliced (optional)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Instructions</h3>
+          <ol>
+            <li>Heat half the oil in a skillet over medium heat. Scramble the eggs until fully cooked, then transfer them to a plate.</li>
+            <li>Add the remaining oil and frozen vegetables. Cook for 3–4 minutes until hot.</li>
+            <li>Add the chilled rice and soy sauce. Break up any clumps and stir-fry until the rice is steaming hot.</li>
+            <li>Stir the eggs back in, heat through, and finish with sliced green onion if desired.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="note"><strong>Food safety:</strong> Refrigerate cooked rice promptly. Reheat leftovers until steaming hot and use refrigerated rice within 3–4 days.</div>
+    </article>
+
+    <section class="tip">
+      <h2>Make quick cooking even easier</h2>
+      <ul>
+        <li>Keep a short grocery list of ingredients you actually use.</li>
+        <li>Choose recipes that share ingredients so nothing gets forgotten in the fridge.</li>
+        <li>Wash and put away dishes while your food cooks.</li>
+        <li>Keep frozen vegetables on hand for quick, nutritious additions.</li>
+      </ul>
+      <p>Want meals ready for the whole week? Visit <a href="meal-prep.html">our meal prep guide</a>, or explore <a href="healthy-budget-meals.html">healthy meals on a budget</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a class="logo" href="index.html" style="color:white">dorm dish.</a>
+      <p>Student-friendly recipes for real-life schedules.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="quick-recipes.html">Quick Recipes</a>
+        <a href="meal-prep.html">Meal Prep</a>
+        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+      </nav>
+      <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+    </div>
+  </footer>
+</body>
+</html>
+```
