@@ -2,227 +2,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Easy meal prep for college students, with affordable burrito bowls, overnight oats, and practical weekly planning tips.">
-  <title>Easy College Meal Prep | Dorm Dish</title>
-  <style>
-    :root { --cream:#fffaf1; --green:#284b38; --orange:#ed8956; --yellow:#f5d88b; --text:#292e29; --white:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--cream); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
-    .notice { background:var(--green); color:white; padding:12px 20px; text-align:center; font-size:13px; }
-    header, main { width:min(1080px,100%); margin:auto; padding-left:24px; padding-right:24px; }
-    header { padding-top:22px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
-    .logo { color:var(--green); text-decoration:none; font-size:30px; font-weight:900; letter-spacing:-1.5px; }
-    nav { display:flex; flex-wrap:wrap; gap:10px 18px; }
-    nav a { color:var(--green); text-decoration:none; font-size:14px; font-weight:bold; }
-    nav a:hover { color:#b8572e; text-decoration:underline; }
-    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
-    h1,h2,h3 { color:var(--green); line-height:1.2; }
-    h1 { font-size:clamp(36px,6vw,56px); letter-spacing:-1.8px; margin:12px 0; }
-    h2 { font-size:28px; letter-spacing:-.5px; }
-    h3 { font-size:21px; }
-    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:800; }
-    .hero { background:var(--yellow); border-radius:24px; padding:44px 36px; margin:14px 0 36px; }
-    .hero p { max-width:700px; font-size:17px; }
-    .section { margin:38px 0; }
-    .recipe { background:white; border:1px solid #e9e1d4; border-radius:16px; padding:26px; margin:22px 0; }
-    .recipe-top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
-    .tag { background:#f9e8d9; color:#814426; border-radius:20px; padding:5px 11px; font-size:12px; font-weight:bold; }
-    .columns { display:grid; grid-template-columns:1fr 1.5fr; gap:28px; }
-    ul,ol { padding-left:22px; }
-    li { margin-bottom:7px; }
-    .note { background:#e9f0e7; border-radius:12px; padding:15px 18px; margin-top:18px; }
-    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-    .card { background:white; border:1px solid #e9e1d4; border-radius:14px; padding:20px; }
-    .checklist { background:#fff0df; border-radius:16px; padding:25px; }
-    footer { background:var(--green); color:white; padding:30px 24px; margin-top:50px; }
-    .footer-inner { max-width:1032px; margin:auto; }
-    footer a { color:white; }
-    footer .notice { padding:14px 0 0; font-size:13px; }
-    @media(max-width:700px) {
-      header { align-items:flex-start; flex-direction:column; }
-      .hero { padding:30px 22px; }
-      .columns,.cards { grid-template-columns:1fr; gap:8px; }
-      .recipe { padding:20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ten easy college meal prep recipes for breakfast, lunch, and dinner.">
+<title>Meal Prep | Campus Cravings</title>
+<style>
+:root{--cream:#fffaf1;--green:#284b38;--orange:#ed8956;--yellow:#f5d88b;--text:#292e29;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--text);font:16px/1.65 Arial,Helvetica,sans-serif}
+.notice{background:var(--green);color:white;padding:12px 18px;text-align:center;font-size:13px}
+header,main{width:min(1080px,100%);margin:auto;padding:0 24px}
+header{padding-top:22px;padding-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{color:var(--green);text-decoration:none;font-size:29px;font-weight:900;letter-spacing:-1.2px}
+nav{display:flex;flex-wrap:wrap;gap:10px 18px}nav a{color:var(--green);text-decoration:none;font-size:14px;font-weight:bold}
+nav a:hover,main a:hover{text-decoration:underline;color:#b8572e}
+h1,h2,h3{color:var(--green);line-height:1.2}h1{font-size:clamp(35px,6vw,58px);letter-spacing:-1.6px;margin:12px 0}
+h2{font-size:29px;letter-spacing:-.5px}h3{font-size:21px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--green)}
+.hero{background:var(--yellow);border-radius:24px;padding:44px 36px;margin:14px 0 38px}.hero p{max-width:700px;font-size:17px}
+.recipe{background:white;border:1px solid #e9e1d4;border-radius:16px;padding:23px;margin:20px 0}
+.recipe-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.columns{display:grid;grid-template-columns:1fr 1.5fr;gap:25px}
+ul,ol{padding-left:22px}li{margin-bottom:6px}
+.tag{display:inline-block;background:#f9e8d9;color:#814426;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:bold}
+.note,.tip{background:#e9f0e7;border-radius:13px;padding:16px 19px;margin-top:16px}
+.tip{padding:25px;margin:35px 0;background:#fff0df}
+footer{background:var(--green);color:white;padding:30px 24px;margin-top:50px}
+.footer-inner{max-width:1032px;margin:auto}footer a{color:white}footer .notice{padding:14px 0 0;font-size:13px}
+@media(max-width:700px){header{align-items:flex-start;flex-direction:column}.hero{padding:30px 22px}.columns{grid-template-columns:1fr;gap:12px}.recipe{padding:20px}nav{gap:12px 15px}}
+</style>
 </head>
 <body>
-  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<header>
+<a class="logo" href="index.html">campus cravings<span style="color:var(--orange)">.</span></a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="quick-recipes.html">Quick Recipes</a><a href="meal-prep.html" aria-current="page">Meal Prep</a><a href="healthy-budget-meals.html">Healthy on a Budget</a></nav>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow">Your future self says thanks</div>
+<h1>Easy Meals for College Students to Meal Prep</h1>
+<p>Spend less time cooking during the week with make-ahead breakfasts, lunch bowls, and easy dinners. These recipes work for shared apartments, busy schedules, and anyone who wants to make groceries go further.</p>
+</section>
 
-  <header>
-    <a class="logo" href="index.html">dorm dish<span style="color:var(--orange)">.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="quick-recipes.html">Quick Recipes</a>
-      <a href="meal-prep.html" aria-current="page">Meal Prep</a>
-      <a href="healthy-budget-meals.html">Healthy on a Budget</a>
-    </nav>
-  </header>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 01</div><h2>Build-Your-Own Burrito Bowls</h2></div><span class="tag">30 minutes · 4 servings</span></div>
+<p>A flexible lunch or dinner with rice, beans, and vegetables.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>2 cups cooked rice</li><li>2 cans black beans, drained and rinsed</li><li>2 cups corn</li><li>1 bell pepper, diced</li><li>2 teaspoons taco seasoning</li><li>Salsa and shredded cheese</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Cook rice according to package directions.</li><li>Sauté the bell pepper and corn until tender.</li><li>Add black beans and taco seasoning, plus a splash of water.</li><li>Divide rice and bean mixture among four containers.</li><li>Store salsa and cheese separately and add when serving.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Refrigerate portions you will eat within 3–4 days and freeze later portions promptly.</div>
+</article>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow">Your future self says thanks</div>
-      <h1>Easy meals for college students to meal prep</h1>
-      <p>Make busy weekdays easier with a little planning. These flexible recipes help you prepare breakfast, lunch, or dinner ahead of time without spending your entire Sunday in the kitchen.</p>
-      <p><strong>The goal:</strong> Cook a few basics, mix and match ingredients, and give yourself more time for everything else.</p>
-    </section>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 02</div><h2>Peanut Butter Banana Overnight Oats</h2></div><span class="tag">5 minutes prep · 1 serving</span></div>
+<p>A grab-and-go breakfast you can prepare the night before.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1/2 cup rolled oats</li><li>1/2 cup milk</li><li>1/4 cup plain yogurt</li><li>1 tablespoon peanut butter</li><li>1/2 banana</li><li>Cinnamon</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Mix oats, milk, yogurt, peanut butter, and cinnamon in a jar.</li><li>Cover and refrigerate overnight or at least four hours.</li><li>Stir in the morning and add sliced banana before eating.</li><li>Add a splash of milk if you prefer a thinner texture.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Prepare several jars, keeping fruit separate until serving.</div>
+</article>
 
-    <section class="section">
-      <div class="eyebrow">Start with a simple system</div>
-      <h2>Your 60-minute meal prep routine</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>01. Choose</h3>
-          <p>Pick two meals and one breakfast for the week. Check your fridge and pantry before shopping.</p>
-        </article>
-        <article class="card">
-          <h3>02. Cook</h3>
-          <p>Prepare rice, roast vegetables, cook your protein, and mix a sauce while different items cook.</p>
-        </article>
-        <article class="card">
-          <h3>03. Portion</h3>
-          <p>Divide meals into containers, label them with the date, and refrigerate or freeze promptly.</p>
-        </article>
-      </div>
-    </section>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 03</div><h2>Roasted Veggie Chickpea Bowls</h2></div><span class="tag">35 minutes · 3 servings</span></div>
+<p>A colorful, plant-based meal with chickpeas and roasted vegetables.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 can chickpeas, drained</li><li>3 cups chopped vegetables</li><li>1 tablespoon olive oil</li><li>Garlic powder</li><li>2 cups cooked rice or quinoa</li><li>1 lemon</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Heat oven to 425°F.</li><li>Toss chickpeas and vegetables with oil and garlic powder.</li><li>Roast for 20–25 minutes, turning halfway through.</li><li>Divide among containers with cooked grains.</li><li>Add lemon juice when serving.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Swap vegetables based on sales and what is already in your refrigerator.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 01 · Lunch or dinner</div>
-          <h2>Build-Your-Own Burrito Bowls</h2>
-        </div>
-        <span class="tag">30 minutes · 4 servings</span>
-      </div>
-      <p>One batch creates four colorful bowls. Change up the toppings each day to keep lunch interesting.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>2 cups uncooked rice, prepared according to the package</li>
-            <li>2 cans black beans, drained and rinsed</li>
-            <li>2 cups frozen corn</li>
-            <li>1 bell pepper, diced</li>
-            <li>1 tablespoon oil</li>
-            <li>2 teaspoons taco seasoning</li>
-            <li>1 lime, cut into wedges</li>
-            <li>Salsa and shredded cheese, to serve</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Cook the rice according to the package directions.</li>
-            <li>Heat oil in a skillet. Add the bell pepper and corn and cook until tender and heated through.</li>
-            <li>Stir in the black beans and taco seasoning. Add a small splash of water and cook until hot.</li>
-            <li>Divide the rice and bean mixture among four containers. Pack salsa and cheese separately if possible.</li>
-            <li>Finish with lime juice when serving. Add fresh lettuce or avocado on the day you eat the bowl.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Meal prep tip:</strong> Refrigerate only the portions you plan to eat within 3–4 days. Freeze later portions promptly and thaw safely in the refrigerator.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 04</div><h2>Pesto Pasta Lunch Boxes</h2></div><span class="tag">20 minutes · 3 servings</span></div>
+<p>A simple pasta lunch that tastes good chilled or reheated.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>8 ounces pasta</li><li>3 tablespoons pesto</li><li>1 cup cherry tomatoes</li><li>1 cup chickpeas</li><li>1 cup spinach</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Cook pasta according to the package and drain.</li><li>Let it cool slightly, then toss with pesto.</li><li>Add halved tomatoes, chickpeas, and spinach.</li><li>Divide into containers and refrigerate promptly.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Add a splash of water or a little extra pesto before serving if the pasta seems dry.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 02 · Breakfast</div>
-          <h2>Peanut Butter Banana Overnight Oats</h2>
-        </div>
-        <span class="tag">5 minutes prep · 1 serving</span>
-      </div>
-      <p>A grab-and-go breakfast you can mix the night before. Multiply the ingredients to prepare several jars at once.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>1/2 cup rolled oats</li>
-            <li>1/2 cup milk or unsweetened soy milk</li>
-            <li>1/4 cup plain yogurt</li>
-            <li>1 tablespoon peanut butter</li>
-            <li>1/2 banana, sliced</li>
-            <li>A pinch of cinnamon</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Combine the oats, milk, yogurt, peanut butter, and cinnamon in a jar or lidded container.</li>
-            <li>Stir well, cover, and refrigerate overnight or for at least four hours.</li>
-            <li>Stir again in the morning. Add the banana just before eating.</li>
-            <li>Add a splash of milk if you prefer a thinner texture.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Meal prep tip:</strong> Keep the banana separate until breakfast to help it stay fresh. Eat refrigerated overnight oats within 3–4 days.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 05</div><h2>Sheet-Pan Chicken and Vegetables</h2></div><span class="tag">35 minutes · 4 servings</span></div>
+<p>A balanced meal with easy cleanup and plenty of room for ingredient swaps.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 pound chicken breast, cubed</li><li>4 cups chopped vegetables</li><li>1 tablespoon oil</li><li>Paprika, salt, and pepper</li><li>2 cups cooked rice</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Heat oven to 425°F and line a baking sheet.</li><li>Toss chicken and vegetables with oil and seasonings.</li><li>Spread on the sheet and roast until vegetables are tender and chicken reaches 165°F internally.</li><li>Serve with rice and divide into four containers.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Use broccoli, carrots, or whatever vegetables are affordable that week.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 03 · Lunch or dinner</div>
-          <h2>Roasted Veggie & Chickpea Bowls</h2>
-        </div>
-        <span class="tag">35 minutes · 3 servings</span>
-      </div>
-      <p>A colorful, plant-based meal with filling chickpeas, roasted vegetables, and a simple lemon dressing.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>1 can chickpeas, drained and rinsed</li>
-            <li>2 cups chopped broccoli or cauliflower</li>
-            <li>1 bell pepper, chopped</li>
-            <li>2 cups cooked rice or quinoa</li>
-            <li>1 tablespoon olive oil</li>
-            <li>1/2 teaspoon garlic powder</li>
-            <li>1 lemon</li>
-            <li>Salt and pepper to taste</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Heat the oven to 425°F. Pat the chickpeas dry and chop the vegetables into bite-sized pieces.</li>
-            <li>Toss the chickpeas and vegetables with olive oil, garlic powder, salt, and pepper.</li>
-            <li>Spread on a baking sheet and roast for 20–25 minutes, turning halfway through, until the vegetables are tender.</li>
-            <li>Serve over cooked rice or quinoa. Squeeze fresh lemon juice over each bowl.</li>
-            <li>Divide into containers after cooking and refrigerate or freeze the portions you will not eat soon.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Meal prep tip:</strong> Store dressing separately and add it when serving. Swap in carrots, zucchini, or frozen vegetables depending on what's affordable.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 06</div><h2>Freezer-Friendly Bean Chili</h2></div><span class="tag">30 minutes · 4 servings</span></div>
+<p>A hearty pot of chili that can become several easy meals.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 can kidney beans</li><li>1 can black beans</li><li>1 can diced tomatoes</li><li>1 cup corn</li><li>1/2 onion, diced</li><li>Chili powder and cumin</li><li>1 cup water or broth</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Sauté onion in a pot until softened.</li><li>Add beans, tomatoes, corn, spices, and water or broth.</li><li>Bring to a simmer and cook for 20 minutes, stirring occasionally.</li><li>Cool promptly and divide into individual containers.</li><li>Refrigerate near-term portions and freeze the rest.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Thaw frozen portions in the refrigerator and reheat until steaming hot.</div>
+</article>
 
-    <section class="section checklist">
-      <div class="eyebrow">Your Sunday checklist</div>
-      <h2>Set up your week in advance</h2>
-      <ul>
-        <li>Check what you already have before writing your grocery list.</li>
-        <li>Choose recipes that reuse rice, beans, vegetables, and sauces.</li>
-        <li>Wash produce and portion snacks after shopping.</li>
-        <li>Label containers with the meal name and preparation date.</li>
-        <li>Refrigerate perishable food within two hours; freeze meals you won't eat within 3–4 days.</li>
-      </ul>
-      <p>Looking for more low-cost ingredients? Check out <a href="healthy-budget-meals.html">healthy college meals on a budget</a> or find something fast on our <a href="quick-recipes.html">quick recipes page</a>.</p>
-    </section>
-  </main>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 07</div><h2>Egg and Veggie Breakfast Muffins</h2></div><span class="tag">25 minutes · 6 muffins</span></div>
+<p>Portable egg bites for mornings when you need breakfast quickly.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>6 eggs</li><li>1 cup chopped spinach or peppers</li><li>1/3 cup shredded cheese</li><li>Salt and pepper</li><li>Oil for greasing the pan</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Heat oven to 350°F and grease six muffin cups.</li><li>Beat eggs and mix with vegetables, cheese, salt, and pepper.</li><li>Divide mixture between the cups.</li><li>Bake for 18–22 minutes until the centers are set.</li><li>Cool promptly and refrigerate or freeze in portions.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Reheat thoroughly before eating and use within safe storage times.</div>
+</article>
 
-  <footer>
-    <div class="footer-inner">
-      <a class="logo" href="index.html" style="color:white">dorm dish.</a>
-      <p>Student-friendly recipes for real-life schedules.</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="quick-recipes.html">Quick Recipes</a>
-        <a href="meal-prep.html">Meal Prep</a>
-        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
-      </nav>
-      <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
-    </div>
-  </footer>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 08</div><h2>Lentil Curry with Rice</h2></div><span class="tag">35 minutes · 4 servings</span></div>
+<p>A comforting, budget-friendly meal with pantry ingredients.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 cup red lentils, rinsed</li><li>1 can diced tomatoes</li><li>1 can light coconut milk</li><li>1 tablespoon curry powder</li><li>1 cup water</li><li>Cooked rice for serving</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Combine lentils, tomatoes, coconut milk, curry powder, and water in a pot.</li><li>Bring to a gentle simmer.</li><li>Cook for 18–22 minutes, stirring occasionally, until lentils are tender.</li><li>Add water if the curry becomes too thick.</li><li>Divide with rice into meal containers.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Add frozen spinach near the end of cooking for extra vegetables.</div>
+</article>
+
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 09</div><h2>Greek-Inspired Couscous Bowls</h2></div><span class="tag">20 minutes · 3 servings</span></div>
+<p>A fresh lunch with chickpeas, vegetables, and a simple lemon dressing.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 cup couscous</li><li>1 can chickpeas, rinsed</li><li>1 cucumber, chopped</li><li>1 cup tomatoes, chopped</li><li>1 lemon</li><li>2 tablespoons olive oil</li><li>Dried oregano</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Prepare couscous according to package directions.</li><li>Mix lemon juice, olive oil, oregano, salt, and pepper.</li><li>Combine couscous with chickpeas and chopped vegetables.</li><li>Toss with dressing and divide into containers.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Keep dressing separate if you prefer your vegetables extra crisp.</div>
+</article>
+
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 10</div><h2>Yogurt Berry Breakfast Jars</h2></div><span class="tag">5 minutes prep · 3 servings</span></div>
+<p>A quick breakfast with yogurt, fruit, and a crunchy topping.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>3 cups plain yogurt</li><li>1 1/2 cups berries, fresh or frozen</li><li>1 cup oats or granola</li><li>Cinnamon, optional</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Divide yogurt between three containers.</li><li>Add berries and a sprinkle of cinnamon.</li><li>Cover and refrigerate.</li><li>Add oats or granola just before eating so they stay crunchy.</li></ol></div></div>
+<div class="note"><strong>Prep tip:</strong> Frozen berries can be economical and thaw in the refrigerator overnight.</div>
+</article>
+
+<section class="tip"><h2>Your weekly meal-prep checklist</h2><ul><li>Plan meals before grocery shopping.</li><li>Cook ingredients that can be used in more than one recipe.</li><li>Label containers with the preparation date.</li><li>Refrigerate perishable food within two hours.</li><li>Freeze portions you won't eat within 3–4 days.</li></ul><p>Explore <a href="index.html">Home</a>, <a href="quick-recipes.html">Quick Recipes</a>, or <a href="healthy-budget-meals.html">Healthy on a Budget</a>.</p></section>
+</main>
+<footer><div class="footer-inner"><a class="logo" href="index.html" style="color:white">campus cravings.</a><p>Good food for wherever college life takes you.</p>
+<nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="quick-recipes.html">Quick Recipes</a><a href="meal-prep.html">Meal Prep</a><a href="healthy-budget-meals.html">Healthy on a Budget</a></nav>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+</div></footer>
 </body>
 </html>
 ```
