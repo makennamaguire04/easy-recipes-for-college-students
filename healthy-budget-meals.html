@@ -2,249 +2,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cheap, healthy college meals with affordable ingredients, balanced recipes, and practical tips for saving money on groceries.">
-  <title>Cheap & Healthy College Meals | Dorm Dish</title>
-  <style>
-    :root { --cream:#fffaf1; --green:#284b38; --orange:#ed8956; --yellow:#f5d88b; --text:#292e29; --white:#fff; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--cream); color:var(--text); font-family:Arial,Helvetica,sans-serif; line-height:1.65; }
-    .notice { background:var(--green); color:white; padding:12px 20px; text-align:center; font-size:13px; }
-    header, main { width:min(1080px,100%); margin:auto; padding-left:24px; padding-right:24px; }
-    header { padding-top:22px; padding-bottom:20px; display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
-    .logo { color:var(--green); text-decoration:none; font-size:30px; font-weight:900; letter-spacing:-1.5px; }
-    nav { display:flex; flex-wrap:wrap; gap:10px 18px; }
-    nav a { color:var(--green); text-decoration:none; font-size:14px; font-weight:bold; }
-    nav a:hover { color:#b8572e; text-decoration:underline; }
-    a:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }
-    h1,h2,h3 { color:var(--green); line-height:1.2; }
-    h1 { font-size:clamp(36px,6vw,56px); letter-spacing:-1.8px; margin:12px 0; }
-    h2 { font-size:28px; letter-spacing:-.5px; }
-    h3 { font-size:21px; }
-    .eyebrow { color:var(--green); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:800; }
-    .hero { background:var(--yellow); border-radius:24px; padding:44px 36px; margin:14px 0 36px; }
-    .hero p { max-width:700px; font-size:17px; }
-    .section { margin:38px 0; }
-    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:22px 0; }
-    .card { background:white; border:1px solid #e9e1d4; border-radius:16px; padding:22px; }
-    .emoji { font-size:32px; }
-    .recipe { background:white; border:1px solid #e9e1d4; border-radius:16px; padding:26px; margin:22px 0; }
-    .recipe-top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
-    .tag { background:#f9e8d9; color:#814426; border-radius:20px; padding:5px 11px; font-size:12px; font-weight:bold; }
-    .columns { display:grid; grid-template-columns:1fr 1.5fr; gap:28px; }
-    ul,ol { padding-left:22px; }
-    li { margin-bottom:7px; }
-    .note { background:#e9f0e7; border-radius:12px; padding:15px 18px; margin-top:18px; }
-    .tip { background:#fff0df; border-radius:16px; padding:26px; margin:35px 0; }
-    footer { background:var(--green); color:white; padding:30px 24px; margin-top:50px; }
-    .footer-inner { max-width:1032px; margin:auto; }
-    footer a { color:white; }
-    footer .notice { padding:14px 0 0; font-size:13px; }
-    @media(max-width:700px) {
-      header { align-items:flex-start; flex-direction:column; }
-      .hero { padding:30px 22px; }
-      .cards,.columns { grid-template-columns:1fr; gap:8px; }
-      .recipe { padding:20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ten cheap, healthy college meals made with affordable grocery staples and simple instructions.">
+<title>Healthy on a Budget | Campus Cravings</title>
+<style>
+:root{--cream:#fffaf1;--green:#284b38;--orange:#ed8956;--yellow:#f5d88b;--text:#292e29;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--text);font:16px/1.65 Arial,Helvetica,sans-serif}
+.notice{background:var(--green);color:white;padding:12px 18px;text-align:center;font-size:13px}
+header,main{width:min(1080px,100%);margin:auto;padding:0 24px}
+header{padding-top:22px;padding-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{color:var(--green);text-decoration:none;font-size:29px;font-weight:900;letter-spacing:-1.2px}
+nav{display:flex;flex-wrap:wrap;gap:10px 18px}nav a{color:var(--green);text-decoration:none;font-size:14px;font-weight:bold}
+nav a:hover,main a:hover{text-decoration:underline;color:#b8572e}
+h1,h2,h3{color:var(--green);line-height:1.2}h1{font-size:clamp(35px,6vw,58px);letter-spacing:-1.6px;margin:12px 0}
+h2{font-size:29px;letter-spacing:-.5px}h3{font-size:21px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--green)}
+.hero{background:var(--yellow);border-radius:24px;padding:44px 36px;margin:14px 0 38px}.hero p{max-width:700px;font-size:17px}
+.recipe{background:white;border:1px solid #e9e1d4;border-radius:16px;padding:23px;margin:20px 0}
+.recipe-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.columns{display:grid;grid-template-columns:1fr 1.5fr;gap:25px}
+ul,ol{padding-left:22px}li{margin-bottom:6px}
+.tag{display:inline-block;background:#f9e8d9;color:#814426;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:bold}
+.note,.tip{background:#e9f0e7;border-radius:13px;padding:16px 19px;margin-top:16px}
+.tip{padding:25px;margin:35px 0;background:#fff0df}
+footer{background:var(--green);color:white;padding:30px 24px;margin-top:50px}
+.footer-inner{max-width:1032px;margin:auto}footer a{color:white}footer .notice{padding:14px 0 0;font-size:13px}
+@media(max-width:700px){header{align-items:flex-start;flex-direction:column}.hero{padding:30px 22px}.columns{grid-template-columns:1fr;gap:12px}.recipe{padding:20px}nav{gap:12px 15px}}
+</style>
 </head>
 <body>
-  <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+<header>
+<a class="logo" href="index.html">campus cravings<span style="color:var(--orange)">.</span></a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="quick-recipes.html">Quick Recipes</a><a href="meal-prep.html">Meal Prep</a><a href="healthy-budget-meals.html" aria-current="page">Healthy on a Budget</a></nav>
+</header>
+<main>
+<section class="hero">
+<div class="eyebrow">Eat well without overspending</div>
+<h1>Cheap, Healthy College Meals</h1>
+<p>Eating well in college doesn't require expensive ingredients or complicated recipes. These ten affordable meals use everyday grocery staples to help you make satisfying breakfasts, lunches, and dinners on a student budget.</p>
+</section>
 
-  <header>
-    <a class="logo" href="index.html">dorm dish<span style="color:var(--orange)">.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="quick-recipes.html">Quick Recipes</a>
-      <a href="meal-prep.html">Meal Prep</a>
-      <a href="healthy-budget-meals.html" aria-current="page">Healthy on a Budget</a>
-    </nav>
-  </header>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 01</div><h2>Hearty Bean and Veggie Chili</h2></div><span class="tag">30 minutes · 4 servings</span></div>
+<p>A comforting one-pot meal made with affordable pantry staples.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 can black beans, drained and rinsed</li><li>1 can kidney beans, drained and rinsed</li><li>1 can diced tomatoes</li><li>1 cup corn</li><li>1/2 onion, diced</li><li>1 teaspoon chili powder</li><li>1/2 teaspoon cumin</li><li>1 cup water or vegetable broth</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Sauté onion in a pot until softened.</li><li>Stir in chili powder and cumin.</li><li>Add beans, tomatoes, corn, and water or broth.</li><li>Simmer for 15–20 minutes, stirring occasionally.</li><li>Serve alone or over rice.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Make extra portions and freeze what you won't eat within 3–4 days.</div>
+</article>
 
-  <main>
-    <section class="hero">
-      <div class="eyebrow">Eat well without overspending</div>
-      <h1>Cheap, healthy college meals</h1>
-      <p>Eating well in college doesn't require expensive ingredients or complicated recipes. Build filling meals around affordable staples, add fruits and vegetables, and choose flexible recipes that make the most of your grocery budget.</p>
-      <p><strong>Our rule:</strong> Keep it simple, use what you have, and make ingredients work across multiple meals.</p>
-    </section>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 02</div><h2>Veggie and Egg Breakfast Wrap</h2></div><span class="tag">10 minutes · 1 serving</span></div>
+<p>A filling breakfast that works for busy mornings or an easy lunch.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 large tortilla</li><li>2 eggs</li><li>1/2 cup frozen spinach or mixed vegetables</li><li>2 tablespoons shredded cheese</li><li>1 teaspoon oil</li><li>Salsa, optional</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Heat oil in a skillet and cook vegetables until hot.</li><li>Beat the eggs and pour them into the skillet.</li><li>Scramble until fully cooked, then add cheese.</li><li>Spoon onto the tortilla, add salsa, and roll into a wrap.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Use leftover vegetables and whichever cheese is on sale.</div>
+</article>
 
-    <section class="section">
-      <div class="eyebrow">The affordable pantry</div>
-      <h2>Six budget-friendly staples</h2>
-      <div class="cards">
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🌾</div>
-          <h3>Oats & rice</h3>
-          <p>Versatile foundations for breakfasts, grain bowls, and satisfying sides.</p>
-        </article>
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🫘</div>
-          <h3>Beans & lentils</h3>
-          <p>Affordable plant-based protein for tacos, soups, salads, and pasta sauces.</p>
-        </article>
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🥚</div>
-          <h3>Eggs</h3>
-          <p>A useful source of protein for scrambles, sandwiches, and quick dinners.</p>
-        </article>
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🥦</div>
-          <h3>Frozen vegetables</h3>
-          <p>Convenient, easy to portion, and available year-round without worrying about spoilage as quickly.</p>
-        </article>
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🍌</div>
-          <h3>Seasonal fruit</h3>
-          <p>Bananas, apples, and whatever fruit is on sale make easy snacks and breakfast additions.</p>
-        </article>
-        <article class="card">
-          <div class="emoji" aria-hidden="true">🥜</div>
-          <h3>Peanut butter</h3>
-          <p>Adds flavor and staying power to oatmeal, toast, smoothies, and noodle sauces.</p>
-        </article>
-      </div>
-    </section>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 03</div><h2>Garlic Chickpea Pasta</h2></div><span class="tag">20 minutes · 2 servings</span></div>
+<p>A simple pasta dinner with chickpeas and spinach for extra variety.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>6 ounces pasta</li><li>1 can chickpeas, drained and rinsed</li><li>2 garlic cloves, minced</li><li>1 cup frozen spinach</li><li>1 tablespoon olive oil</li><li>Salt and pepper</li><li>Grated Parmesan, optional</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Cook pasta according to package directions and reserve a little pasta water.</li><li>Gently cook garlic in olive oil for about 30 seconds.</li><li>Add chickpeas and spinach and heat through.</li><li>Toss with drained pasta and a splash of pasta water.</li><li>Season and finish with Parmesan if desired.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Store-brand pasta and canned chickpeas make this an easy pantry meal.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 01 · Meat-free favorite</div>
-          <h2>Hearty Bean & Veggie Chili</h2>
-        </div>
-        <span class="tag">30 minutes · 4 servings</span>
-      </div>
-      <p>A comforting one-pot dinner made with pantry staples. Serve it on its own or spoon it over rice or a baked potato.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>1 can black beans, drained and rinsed</li>
-            <li>1 can kidney beans, drained and rinsed</li>
-            <li>1 can diced tomatoes</li>
-            <li>1 cup frozen corn</li>
-            <li>1/2 onion, diced</li>
-            <li>1 tablespoon oil</li>
-            <li>1 teaspoon chili powder</li>
-            <li>1/2 teaspoon cumin</li>
-            <li>1 cup water or low-sodium vegetable broth</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Heat oil in a pot over medium heat. Add the onion and cook for 3–4 minutes until softened.</li>
-            <li>Stir in chili powder and cumin. Cook for about 30 seconds until fragrant.</li>
-            <li>Add both beans, diced tomatoes, corn, and water or broth.</li>
-            <li>Bring to a gentle simmer and cook uncovered for 15–20 minutes, stirring occasionally.</li>
-            <li>Taste and adjust the seasoning. Serve with rice, a spoonful of yogurt, or a little shredded cheese if desired.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Budget tip:</strong> Make a double batch if you have freezer space. Refrigerate portions you will eat within 3–4 days and freeze the rest.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 04</div><h2>Lentil Tomato Soup</h2></div><span class="tag">30 minutes · 4 servings</span></div>
+<p>A warming soup with lentils, tomatoes, and vegetables.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 cup dry lentils, rinsed</li><li>1 can diced tomatoes</li><li>1 carrot, diced</li><li>1/2 onion, diced</li><li>4 cups broth or water</li><li>1 teaspoon Italian seasoning</li><li>Salt and pepper</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Sauté onion and carrot in a pot until beginning to soften.</li><li>Add lentils, tomatoes, broth or water, and Italian seasoning.</li><li>Bring to a boil, then lower the heat.</li><li>Simmer for 20–25 minutes until lentils are tender.</li><li>Season to taste and serve with bread if desired.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Dried lentils are versatile and can be used in soups, curries, and salads.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 02 · Breakfast or lunch</div>
-          <h2>Veggie & Egg Breakfast Wrap</h2>
-        </div>
-        <span class="tag">10 minutes · 1 serving</span>
-      </div>
-      <p>A filling wrap for mornings when you need breakfast to travel with you. The ingredients are easy to adjust based on what's in your fridge.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>1 large tortilla</li>
-            <li>2 eggs</li>
-            <li>1/2 cup frozen spinach or mixed vegetables</li>
-            <li>2 tablespoons shredded cheese</li>
-            <li>1 teaspoon oil or butter</li>
-            <li>Salt and pepper to taste</li>
-            <li>Salsa, optional</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Heat oil in a skillet over medium heat. Cook the frozen vegetables until hot and any excess moisture has evaporated.</li>
-            <li>Beat the eggs with salt and pepper, pour them into the skillet, and scramble until fully cooked.</li>
-            <li>Sprinkle the cheese over the eggs and let it melt.</li>
-            <li>Spoon the mixture onto the tortilla, add salsa if desired, fold in the sides, and roll into a wrap.</li>
-            <li>Eat immediately or cool the filling promptly before storing it in the refrigerator for a later meal.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Budget tip:</strong> Use leftover roasted vegetables, or swap in black beans for a different filling.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 05</div><h2>Peanut Butter Banana Toast</h2></div><span class="tag">5 minutes · 1 serving</span></div>
+<p>A quick breakfast or snack with a combination of carbohydrates and protein.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>2 slices whole-grain bread</li><li>1 tablespoon peanut butter</li><li>1 banana</li><li>Cinnamon</li><li>Plain yogurt, optional</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Toast the bread to your preferred crispness.</li><li>Spread peanut butter over the toast.</li><li>Slice the banana and arrange it on top.</li><li>Sprinkle with cinnamon and serve with yogurt if desired.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Bananas are often an affordable fruit choice, especially when purchased loose.</div>
+</article>
 
-    <article class="recipe">
-      <div class="recipe-top">
-        <div>
-          <div class="eyebrow">Recipe 03 · Easy dinner</div>
-          <h2>Garlic Chickpea Pasta</h2>
-        </div>
-        <span class="tag">20 minutes · 2 servings</span>
-      </div>
-      <p>Comfort-food pasta with chickpeas for added protein and spinach for a simple vegetable boost.</p>
-      <div class="columns">
-        <div>
-          <h3>Ingredients</h3>
-          <ul>
-            <li>6 ounces pasta</li>
-            <li>1 can chickpeas, drained and rinsed</li>
-            <li>2 cloves garlic, minced</li>
-            <li>1 cup frozen spinach</li>
-            <li>1 tablespoon olive oil</li>
-            <li>1/4 teaspoon chili flakes, optional</li>
-            <li>1/4 cup grated Parmesan, optional</li>
-            <li>Salt and black pepper</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Instructions</h3>
-          <ol>
-            <li>Cook the pasta according to the package directions. Reserve 1/2 cup of pasta water before draining.</li>
-            <li>While the pasta cooks, warm olive oil in a skillet over medium-low heat. Add the garlic and chili flakes, if using, and cook briefly without browning the garlic.</li>
-            <li>Add the chickpeas and frozen spinach. Cook until the spinach is hot and the chickpeas are warmed through.</li>
-            <li>Add the drained pasta and a splash of reserved pasta water. Toss until everything is coated.</li>
-            <li>Season with salt and pepper. Finish with Parmesan if desired.</li>
-          </ol>
-        </div>
-      </div>
-      <div class="note"><strong>Budget tip:</strong> Buy store-brand pasta and canned chickpeas. Use any leafy greens you already have instead of buying a new ingredient.</div>
-    </article>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 06</div><h2>Black Bean and Corn Salad</h2></div><span class="tag">10 minutes · 2 servings</span></div>
+<p>A fresh, colorful salad that can be eaten on its own or used as a taco filling.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 can black beans, drained and rinsed</li><li>1 cup corn</li><li>1 tomato, chopped</li><li>1 tablespoon lime juice</li><li>1 teaspoon olive oil</li><li>1/2 teaspoon cumin</li><li>Optional salad greens</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Combine beans, corn, and chopped tomato in a bowl.</li><li>Whisk lime juice, oil, and cumin together.</li><li>Pour the dressing over the salad and toss.</li><li>Serve over greens or with tortillas or toast.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Frozen corn works just as well as canned corn. Thaw and drain it before using.</div>
+</article>
 
-    <section class="tip">
-      <div class="eyebrow">Shop smarter, waste less</div>
-      <h2>Five ways to stretch your grocery budget</h2>
-      <ol>
-        <li><strong>Plan around sales.</strong> Choose recipes based on affordable produce and proteins that week.</li>
-        <li><strong>Compare unit prices.</strong> Check the price per ounce or pound instead of relying on package size alone.</li>
-        <li><strong>Reuse ingredients.</strong> Spinach can go into wraps, pasta, and rice bowls; beans can become chili, tacos, or salads.</li>
-        <li><strong>Use frozen produce.</strong> It can reduce spoilage and lets you use only what you need.</li>
-        <li><strong>Make a list and stick to it.</strong> Check your cupboards first and avoid buying specialty ingredients for just one meal.</li>
-      </ol>
-      <p>Need a meal ready in minutes? Visit <a href="quick-recipes.html">quick and easy college recipes</a>. Want to plan several days at once? See our <a href="meal-prep.html">college meal prep guide</a>.</p>
-    </section>
-  </main>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 07</div><h2>Baked Potato with Broccoli and Beans</h2></div><span class="tag">15 minutes · 1 serving</span></div>
+<p>A filling meal built around an inexpensive potato.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 large potato</li><li>1 cup broccoli florets</li><li>1/2 cup beans, drained and rinsed</li><li>2 tablespoons plain yogurt</li><li>Black pepper</li><li>Shredded cheese, optional</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Pierce the potato with a fork and microwave until tender, turning halfway through.</li><li>Steam or microwave broccoli until tender.</li><li>Warm the beans until hot.</li><li>Split the potato and add broccoli, beans, and yogurt.</li><li>Season with pepper and add cheese if desired.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Buy potatoes in a bag and use the remaining ones for other meals.</div>
+</article>
 
-  <footer>
-    <div class="footer-inner">
-      <a class="logo" href="index.html" style="color:white">dorm dish.</a>
-      <p>Student-friendly recipes for real-life schedules.</p>
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="quick-recipes.html">Quick Recipes</a>
-        <a href="meal-prep.html">Meal Prep</a>
-        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
-      </nav>
-      <div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
-    </div>
-  </footer>
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 08</div><h2>Cabbage and Egg Stir-Fry</h2></div><span class="tag">15 minutes · 2 servings</span></div>
+<p>A quick skillet dinner that uses affordable vegetables and eggs.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>3 cups shredded cabbage</li><li>2 eggs</li><li>1 cup cooked rice</li><li>1 tablespoon soy sauce</li><li>1 teaspoon oil</li><li>Black pepper</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Heat oil in a skillet and add the cabbage.</li><li>Cook for 4–5 minutes until softened.</li><li>Move cabbage to one side and scramble the eggs until fully cooked.</li><li>Add cooked rice and soy sauce.</li><li>Stir-fry until everything is hot, then season with pepper.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Cabbage is versatile and can also be used in tacos, soups, and salads.</div>
+</article>
+
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 09</div><h2>Tuna and White Bean Salad</h2></div><span class="tag">10 minutes · 2 servings</span></div>
+<p>A protein-rich pantry meal that works as a salad, sandwich filling, or toast topping.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 can tuna, drained</li><li>1 can white beans, drained and rinsed</li><li>1 tablespoon lemon juice</li><li>1 tablespoon olive oil</li><li>Chopped onion, optional</li><li>Black pepper</li><li>Salad greens or bread for serving</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Combine tuna and white beans in a bowl.</li><li>Add lemon juice, olive oil, and chopped onion if using.</li><li>Mix gently and season with black pepper.</li><li>Serve over greens, on toast, or inside a tortilla.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Keep canned beans and tuna in your pantry for days when you don't have fresh ingredients.</div>
+</article>
+
+<article class="recipe">
+<div class="recipe-top"><div><div class="eyebrow">Recipe 10</div><h2>Carrot and Red Lentil Curry</h2></div><span class="tag">30 minutes · 4 servings</span></div>
+<p>A simple, comforting curry that pairs well with rice.</p>
+<div class="columns"><div><h3>Ingredients</h3><ul><li>1 cup red lentils, rinsed</li><li>2 carrots, diced</li><li>1 can diced tomatoes</li><li>1 tablespoon curry powder</li><li>3 cups water or broth</li><li>Cooked rice for serving</li><li>Salt and pepper</li></ul></div>
+<div><h3>Instructions</h3><ol><li>Combine lentils, carrots, tomatoes, curry powder, and water or broth in a pot.</li><li>Bring to a boil, then reduce the heat to a simmer.</li><li>Cook for 20–25 minutes, stirring occasionally, until lentils and carrots are tender.</li><li>Add a little more water if the curry becomes too thick.</li><li>Season and serve over rice.</li></ol></div></div>
+<div class="note"><strong>Budget tip:</strong> Use leftover rice and add frozen spinach near the end for extra vegetables.</div>
+</article>
+
+<section class="tip">
+<h2>Five ways to stretch your grocery budget</h2>
+<ol><li>Plan meals around ingredients you already have.</li><li>Compare unit prices at the grocery store.</li><li>Choose frozen vegetables when they offer better value.</li><li>Reuse ingredients across several meals.</li><li>Freeze extra portions before they spoil.</li></ol>
+<p>Explore <a href="index.html">Home</a>, <a href="quick-recipes.html">Quick Recipes</a>, or <a href="meal-prep.html">Meal Prep</a>.</p>
+</section>
+</main>
+<footer><div class="footer-inner"><a class="logo" href="index.html" style="color:white">campus cravings.</a><p>Good food for wherever college life takes you.</p>
+<nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="quick-recipes.html">Quick Recipes</a><a href="meal-prep.html">Meal Prep</a><a href="healthy-budget-meals.html">Healthy on a Budget</a></nav>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+</div></footer>
 </body>
 </html>
 ```
