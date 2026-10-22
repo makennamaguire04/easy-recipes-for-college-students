@@ -1,23 +1,20 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find grocery stores in Iowa City and nearby Coralville.">
-  <title>Grocery Stores Near Me | Campus Cravings</title>
+  <title>Grocery Guide | Campus Cravings</title>
 
   <style>
     :root {
-      --cream: #fbf7ef;
-      --green: #244b3c;
-      --dark-green: #17372b;
-      --yellow: #f2cf67;
-      --coral: #e98d78;
-      --text: #25332d;
-      --muted: #66736b;
+      --cream: #fbf7ed;
+      --green: #234b3b;
+      --green-light: #e8efe7;
+      --yellow: #f3d36a;
+      --coral: #e98c72;
+      --text: #29352e;
       --white: #ffffff;
-      --border: #e4e0d5;
     }
 
     * {
@@ -27,29 +24,28 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--cream);
+      background-color: var(--cream);
       color: var(--text);
       line-height: 1.6;
     }
 
     .notice {
-      background: var(--yellow);
-      color: var(--dark-green);
-      padding: 10px 16px;
+      background-color: var(--green);
+      color: var(--white);
       text-align: center;
-      font-size: 0.85rem;
-      font-weight: bold;
+      padding: 10px 16px;
+      font-size: 0.82rem;
     }
 
     header {
-      background: var(--green);
-      color: var(--white);
-      padding: 20px 5%;
+      background-color: var(--cream);
+      border-bottom: 1px solid #e5e0d4;
+      padding: 22px 6%;
     }
 
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
+    .nav-container {
+      max-width: 1150px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -57,239 +53,269 @@
       flex-wrap: wrap;
     }
 
-    .brand {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 1.6rem;
+    .logo {
+      color: var(--green);
+      font-size: 1.55rem;
       font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px 16px;
+      gap: 20px;
     }
 
     nav a {
-      color: var(--white);
+      color: var(--green);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
     nav a:hover,
     nav a:focus {
-      color: var(--yellow);
+      color: #b75f47;
       text-decoration: underline;
     }
 
-    main {
-      max-width: 1100px;
-      width: 90%;
-      margin: auto;
-      padding: 40px 0 60px;
-    }
-
     .hero {
-      background: var(--green);
-      color: var(--white);
-      padding: clamp(28px, 6vw, 55px);
-      border-radius: 22px;
+      padding: 65px 6% 60px;
+      text-align: center;
+      background-color: var(--green-light);
     }
 
     .eyebrow {
-      color: var(--yellow);
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      display: inline-block;
+      background-color: var(--yellow);
+      color: var(--green);
+      padding: 6px 14px;
+      border-radius: 30px;
       font-size: 0.8rem;
-      font-weight: bold;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      color: var(--green);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
       line-height: 1.1;
-      letter-spacing: -1px;
-      margin: 10px 0 18px;
+      margin: 20px auto 18px;
+      max-width: 800px;
+      letter-spacing: -1.5px;
     }
 
     .hero p {
-      max-width: 680px;
-      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.08rem;
     }
 
-    .hero-label {
-      display: inline-block;
-      margin-top: 12px;
-      background: var(--yellow);
-      color: var(--dark-green);
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 0.9rem;
+    .intro {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 45px 24px 15px;
+      text-align: center;
     }
 
+    .intro h2,
     .section-heading {
-      margin: 40px 0 20px;
-    }
-
-    h2 {
       color: var(--green);
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      margin: 0 0 8px;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
-    .section-heading p {
-      color: var(--muted);
-      margin: 0;
+    .stores-section {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 25px 6% 65px;
     }
 
     .store-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 22px;
+      margin-top: 25px;
     }
 
     .store-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+      background-color: var(--white);
+      border: 1px solid #e7e1d5;
       border-radius: 18px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      box-shadow: 0 5px 16px rgba(36, 75, 60, 0.05);
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(35, 75, 59, 0.05);
     }
 
-    .tag {
-      background: #f8e8b5;
-      color: var(--dark-green);
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .store-card:nth-child(3n + 1) {
+      border-top: 5px solid var(--yellow);
+    }
+
+    .store-card:nth-child(3n + 2) {
+      border-top: 5px solid var(--coral);
+    }
+
+    .store-card:nth-child(3n) {
+      border-top: 5px solid #8cae94;
     }
 
     .store-card h3 {
       color: var(--green);
       font-size: 1.25rem;
-      margin: 0 0 8px;
+      margin: 0 0 10px;
     }
 
     .store-card p {
-      color: var(--muted);
-      margin: 0 0 12px;
+      margin: 0 0 18px;
     }
 
-    .store-card .address {
-      color: var(--text);
-      font-weight: bold;
-    }
-
-    .map-link {
-      color: var(--green);
-      font-weight: bold;
-      margin-top: auto;
-      padding-top: 8px;
-      text-underline-offset: 4px;
-    }
-
-    .map-link:hover,
-    .map-link:focus {
-      color: #a34f3c;
-    }
-
-    .tips {
-      background: #f7e9e1;
-      border-radius: 20px;
-      padding: 30px;
-      margin-top: 40px;
-    }
-
-    .tips ul {
-      padding-left: 22px;
-      margin-bottom: 0;
-    }
-
-    .tips li {
-      margin: 8px 0;
-    }
-
-    .recipe-cta {
-      background: var(--yellow);
-      border-radius: 18px;
-      padding: 25px;
-      margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .recipe-cta h2 {
-      color: var(--dark-green);
-      font-size: 1.5rem;
-    }
-
-    .recipe-cta p {
-      margin-bottom: 0;
-    }
-
-    .button {
+    .store-type {
       display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      text-decoration: none;
-      padding: 12px 18px;
-      border-radius: 30px;
-      font-weight: bold;
+      background-color: var(--green-light);
+      color: var(--green);
+      border-radius: 20px;
+      padding: 4px 10px;
+      margin-bottom: 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
     }
 
-    .button:hover,
-    .button:focus {
-      background: var(--dark-green);
+    .store-link {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 3px;
+    }
+
+    .store-link:hover,
+    .store-link:focus {
+      color: #b75f47;
+      border-color: var(--coral);
+    }
+
+    .tips-section {
+      background-color: #f3e9d3;
+      padding: 50px 6%;
+    }
+
+    .tips-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .tips-inner h2 {
+      color: var(--green);
+      font-size: 1.8rem;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .tip {
+      background-color: var(--white);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .tip h3 {
+      color: var(--green);
+      margin-top: 0;
+    }
+
+    .back-section {
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .back-section h2 {
+      color: var(--green);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 22px;
+      background-color: var(--green);
+      color: var(--white);
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus {
+      background-color: #38664f;
     }
 
     footer {
-      background: var(--dark-green);
+      background-color: var(--green);
       color: var(--white);
-      padding: 28px 5%;
+      text-align: center;
+      padding: 30px 20px;
     }
 
-    .footer-inner {
-      max-width: 1100px;
-      margin: auto;
+    .footer-nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
+      justify-content: center;
       flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .footer-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus {
+      text-decoration: underline;
+      color: var(--yellow);
     }
 
     footer p {
-      max-width: 500px;
-      font-size: 0.85rem;
-      color: #e1e9e3;
-      margin: 0;
+      font-size: 0.82rem;
+      margin: 8px auto 0;
+      max-width: 750px;
     }
 
-    @media (max-width: 680px) {
-      .header-inner {
-        align-items: flex-start;
+    @media (max-width: 700px) {
+      header {
+        padding: 20px;
       }
 
-      main {
-        width: calc(100% - 32px);
-        padding-top: 24px;
+      .nav-container {
+        flex-direction: column;
       }
 
-      .store-grid {
+      nav {
+        justify-content: center;
+        gap: 12px 16px;
+      }
+
+      .hero {
+        padding: 45px 22px;
+      }
+
+      .store-grid,
+      .tips-grid {
         grid-template-columns: 1fr;
       }
 
-      .tips {
-        padding: 22px;
+      .stores-section {
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   </style>
@@ -302,191 +328,241 @@
   </div>
 
   <header>
-    <div class="header-inner">
-      <a class="brand" href="index.html">Campus Cravings</a>
+    <div class="nav-container">
+      <a class="logo" href="index.html">campus cravings.</a>
 
       <nav aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="quick-recipes.html">Quick Recipes</a>
         <a href="meal-prep.html">Meal Prep</a>
-        <a href="healthy-budget-meals.html">Healthy Budget Meals</a>
-        <a href="grocery-guide.html">Grocery Guide</a>
+        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+        <a href="grocery-guide.html" aria-current="page">Grocery Guide</a>
       </nav>
     </div>
   </header>
 
   <main>
-
     <section class="hero">
-      <p class="eyebrow">Your local shopping guide</p>
-      <h1>Grocery Stores Near Me</h1>
+      <span class="eyebrow">Shop smart, eat well</span>
+      <h1>Your guide to grocery shopping.</h1>
       <p>
-        Stock your kitchen without making grocery shopping complicated.
-        Explore grocery stores in Iowa City and nearby Coralville, from
-        budget-friendly basics to specialty ingredients.
+        Find grocery stores around Iowa City, discover affordable staples,
+        and make your college food budget go further.
       </p>
-      <span class="hero-label">Made for Iowa City students</span>
     </section>
 
-    <section>
-      <div class="section-heading">
-        <h2>Find Your Next Grocery Stop</h2>
-        <p>
-          Explore local options and use the map links for directions.
-          Check current store hours before visiting.
-        </p>
-      </div>
+    <section class="intro">
+      <h2>Good groceries. Better budgets.</h2>
+      <p>
+        Grocery shopping as a college student doesn't have to be complicated.
+        Whether you're looking for low-cost basics, fresh produce, international
+        ingredients, or specialty items, these stores can help you stock your kitchen.
+      </p>
+    </section>
+
+    <section class="stores-section">
+      <h2 class="section-heading">Explore local grocery stores</h2>
+      <p>Choose a store to see its location and plan your next grocery trip.</p>
 
       <div class="store-grid">
 
         <article class="store-card">
-          <span class="tag">Budget-friendly</span>
+          <span class="store-type">Budget friendly</span>
           <h3>ALDI</h3>
-          <p>Everyday staples, produce, dairy, and affordable pantry basics.</p>
-          <p class="address">760 Ruppert Road, Iowa City, IA 52246</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=ALDI+760+Ruppert+Road+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            A great place to look for affordable pantry staples, produce,
+            dairy products, frozen foods, and snacks.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=ALDI+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find an ALDI →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Meat and pantry staples</span>
-          <h3>Fareway Meat &amp; Grocery</h3>
-          <p>Meat, produce, and common household food essentials.</p>
-          <p class="address">2530 Westwinds Drive, Iowa City, IA 52246</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Fareway+2530+Westwinds+Drive+Iowa+City+IA">
-            Open in Google Maps ↗
+          <span class="store-type">Everyday essentials</span>
+          <h3>Fareway</h3>
+          <p>
+            Shop for meat, fresh produce, pantry basics, and ingredients
+            for easy weeknight dinners.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Fareway+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Fareway →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">One-stop shopping</span>
+          <span class="store-type">One-stop shopping</span>
           <h3>Walmart Supercenter</h3>
-          <p>Groceries alongside basic home, school, and dorm supplies.</p>
-          <p class="address">919 Highway 1 West, Iowa City, IA 52246</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Walmart+919+Highway+1+West+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Browse groceries, frozen meals, snacks, kitchen supplies,
+            and household essentials in one trip.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Walmart+Supercenter+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Walmart →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Full-service grocery</span>
+          <span class="store-type">Full-service grocery</span>
           <h3>Hy-Vee Waterfront</h3>
-          <p>A full grocery selection for weekly shopping and recipe ingredients.</p>
-          <p class="address">1720 Waterfront Drive, Iowa City, IA 52240</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Waterfront+1720+Waterfront+Drive+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            A full-service grocery option for fresh ingredients, prepared foods,
+            produce, and everyday cooking needs.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Waterfront+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find this Hy-Vee →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Full-service grocery</span>
+          <span class="store-type">Full-service grocery</span>
           <h3>Hy-Vee Eastside</h3>
-          <p>Another full-service option for produce, pantry items, and weekly groceries.</p>
-          <p class="address">812 South 1st Avenue, Iowa City, IA 52245</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+812+South+1st+Avenue+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Another option for weekly groceries, fresh produce, pantry
+            ingredients, and convenient prepared meals.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Eastside+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find this Hy-Vee →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Local co-op</span>
+          <span class="store-type">Local and natural</span>
           <h3>New Pioneer Co-op</h3>
-          <p>Natural foods, local products, and specialty ingredients.</p>
-          <p class="address">22 South Van Buren Street, Iowa City, IA 52240</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=New+Pioneer+Co-op+22+South+Van+Buren+Street+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Explore local products, bulk foods, specialty ingredients,
+            and options for different dietary preferences.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=New+Pioneer+Co-op+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find New Pioneer →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Downtown market</span>
+          <span class="store-type">Fresh foods</span>
           <h3>Bread Garden Market</h3>
-          <p>A downtown market for groceries, prepared foods, and convenient meal options.</p>
-          <p class="address">225 South Linn Street, Iowa City, IA 52240</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Bread+Garden+Market+225+South+Linn+Street+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Check out bakery items, prepared foods, and ingredients
+            for quick lunches or convenient meals.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Bread+Garden+Market+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Bread Garden →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Natural foods</span>
+          <span class="store-type">Natural products</span>
           <h3>Natural Grocers</h3>
-          <p>Natural and organic grocery options, plus specialty food products.</p>
-          <p class="address">1404 South Gilbert Street, Iowa City, IA 52240</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Natural+Grocers+1404+South+Gilbert+Street+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Browse natural and organic grocery products, pantry items,
+            snacks, and specialty food options.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Natural+Grocers+Coralville+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Natural Grocers →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Specialty ingredients</span>
+          <span class="store-type">International ingredients</span>
           <h3>Asia Plus Asian Market</h3>
-          <p>Asian pantry staples, sauces, noodles, and specialty ingredients.</p>
-          <p class="address">201 South Clinton Street, Suite 193, Iowa City, IA 52240</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Asia+Plus+Asian+Market+201+South+Clinton+Street+Iowa+City+IA">
-            Open in Google Maps ↗
+          <p>
+            Look for Asian pantry staples, noodles, sauces, seasonings,
+            and ingredients to add variety to meals.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Asia+Plus+Asian+Market+Iowa+City+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Asia Plus →
           </a>
         </article>
 
         <article class="store-card">
-          <span class="tag">Nearby option</span>
+          <span class="store-type">Specialty finds</span>
           <h3>Trader Joe's</h3>
-          <p>Frozen meals, snacks, sauces, and ingredients for quick student meals.</p>
-          <p class="address">920 Ponseti Way, Coralville, IA 52241</p>
-          <a class="map-link" target="_blank" rel="noopener noreferrer"
-             href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+920+Ponseti+Way+Coralville+IA">
-            Open in Google Maps ↗
+          <p>
+            Find frozen meals, snacks, sauces, convenient ingredients,
+            and fun additions to simple student meals.
+          </p>
+          <a class="store-link"
+             href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+Coralville+Iowa"
+             target="_blank" rel="noopener noreferrer">
+            Find Trader Joe's →
           </a>
         </article>
 
       </div>
     </section>
 
-    <section class="tips">
-      <h2>Student Grocery-Shopping Tips</h2>
-      <ul>
-        <li>Plan a few meals before shopping and make a list of ingredients you need.</li>
-        <li>Compare unit prices when choosing between package sizes or brands.</li>
-        <li>Choose ingredients that work across multiple meals, such as rice, eggs, beans, frozen vegetables, and pasta.</li>
-        <li>Check store websites for current hours, weekly deals, and product availability.</li>
-      </ul>
-    </section>
+    <section class="tips-section">
+      <div class="tips-inner">
+        <h2>Three ways to shop smarter</h2>
 
-    <section class="recipe-cta">
-      <div>
-        <h2>Got Groceries? Let's Make Something.</h2>
-        <p>Explore simple recipes designed for busy student schedules.</p>
+        <div class="tips-grid">
+          <article class="tip">
+            <h3>01. Make a list</h3>
+            <p>
+              Plan a few meals before shopping so you buy what you need
+              and avoid spending money on ingredients you won't use.
+            </p>
+          </article>
+
+          <article class="tip">
+            <h3>02. Compare prices</h3>
+            <p>
+              Check unit prices, store brands, and weekly deals.
+              Frozen produce can also be a practical option.
+            </p>
+          </article>
+
+          <article class="tip">
+            <h3>03. Shop with a plan</h3>
+            <p>
+              Choose ingredients that work in multiple meals, such as rice,
+              beans, eggs, pasta, and vegetables.
+            </p>
+          </article>
+        </div>
       </div>
-      <a class="button" href="quick-recipes.html">Browse Quick Recipes</a>
     </section>
 
+    <section class="back-section">
+      <h2>Ready to plan your next meal?</h2>
+      <p>Turn your groceries into simple, affordable meals.</p>
+      <a class="back-link" href="quick-recipes.html">Explore Quick Recipes →</a>
+    </section>
   </main>
 
   <footer>
-    <div class="footer-inner">
-      <p>
-        This is a fictional website created for educational purposes as part of
-        MKTG:4400 at the University of Iowa. It is not a real business.
-      </p>
-
-      <nav aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="quick-recipes.html">Quick Recipes</a>
-        <a href="meal-prep.html">Meal Prep</a>
-        <a href="healthy-budget-meals.html">Healthy Budget Meals</a>
-        <a href="grocery-guide.html">Grocery Guide</a>
-      </nav>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="quick-recipes.html">Quick Recipes</a>
+      <a href="meal-prep.html">Meal Prep</a>
+      <a href="healthy-budget-meals.html">Healthy on a Budget</a>
+      <a href="grocery-guide.html">Grocery Guide</a>
     </div>
+
+    <p>Good food for wherever college life takes you.</p>
+
+    <p>
+      This is a fictional website created for educational purposes as part of
+      MKTG:4400 at the University of Iowa. It is not a real business.
+    </p>
   </footer>
 
 </body>
