@@ -1,592 +1,212 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A grocery guide for college students shopping around Iowa City on a budget.">
+<title>Grocery Guide | Campus Cravings</title>
 
-  <title>Grocery Guide | Campus Cravings</title>
-
-  <style>
-    /* Campus Cravings shared colors and styling */
-    :root {
-      --cream: #fbf7ef;
-      --green: #244b3c;
-      --dark-green: #17372b;
-      --yellow: #f2cf67;
-      --coral: #e98d78;
-      --white: #ffffff;
-      --text: #303b34;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--cream);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--green);
-    }
-
-    /* Educational notice */
-    .site-notice {
-      background-color: var(--dark-green);
-      color: var(--white);
-      padding: 10px 18px;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    /* Shared header and navigation */
-    header {
-      background-color: var(--cream);
-      border-bottom: 1px solid #e5dfd2;
-      padding: 20px 5%;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .logo {
-      color: var(--green);
-      font-size: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px 20px;
-    }
-
-    nav a {
-      color: var(--green);
-      font-weight: bold;
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      color: var(--coral);
-    }
-
-    /* Page introduction */
-    .page-intro {
-      background-color: var(--green);
-      color: var(--white);
-      text-align: center;
-      padding: 55px 20px;
-    }
-
-    .page-intro .label {
-      display: inline-block;
-      background-color: var(--yellow);
-      color: var(--dark-green);
-      border-radius: 25px;
-      padding: 5px 14px;
-      font-size: 12px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    h1 {
-      margin: 15px 0;
-      font-size: clamp(32px, 5vw, 46px);
-      line-height: 1.2;
-    }
-
-    .page-intro p {
-      max-width: 650px;
-      margin: 0 auto;
-      font-size: 17px;
-    }
-
-    /* Main content */
-    .content {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 40px 22px 55px;
-    }
-
-    .section-heading {
-      color: var(--green);
-      font-size: 28px;
-      line-height: 1.3;
-      margin: 0 0 10px;
-    }
-
-    .section-description {
-      margin: 0 0 25px;
-    }
-
-    /* Grocery store cards */
-    .store-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .store-card {
-      background-color: var(--white);
-      border: 1px solid #e6dfd3;
-      border-radius: 14px;
-      padding: 23px;
-      box-shadow: 0 3px 10px rgba(23, 55, 43, 0.05);
-    }
-
-    .store-card:nth-child(3n + 1) {
-      border-top: 4px solid var(--yellow);
-    }
-
-    .store-card:nth-child(3n + 2) {
-      border-top: 4px solid var(--coral);
-    }
-
-    .store-card:nth-child(3n) {
-      border-top: 4px solid var(--green);
-    }
-
-    .store-card h2 {
-      color: var(--green);
-      font-size: 21px;
-      line-height: 1.3;
-      margin: 0 0 10px;
-    }
-
-    .store-card p {
-      margin: 0 0 16px;
-    }
-
-    .store-tag {
-      display: inline-block;
-      background-color: var(--cream);
-      color: var(--dark-green);
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .store-link {
-      display: inline-block;
-      color: var(--green);
-      font-weight: bold;
-      text-decoration: none;
-      border-bottom: 2px solid var(--yellow);
-      padding-bottom: 2px;
-    }
-
-    .store-link:hover,
-    .store-link:focus {
-      color: var(--coral);
-      border-color: var(--coral);
-    }
-
-    /* Shopping tips */
-    .shopping-tips {
-      background-color: #f3ead8;
-      padding: 38px 22px;
-    }
-
-    .tips-inner {
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-
-    .tips-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 22px;
-    }
-
-    .tip-card {
-      background-color: var(--cream);
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-    .tip-card h3 {
-      color: var(--green);
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .tip-card p {
-      margin: 0;
-    }
-
-    /* Link back to recipes */
-    .recipe-prompt {
-      text-align: center;
-      padding: 40px 20px 50px;
-    }
-
-    .recipe-prompt h2 {
-      color: var(--green);
-      margin: 0 0 10px;
-      font-size: 26px;
-    }
-
-    .recipe-button {
-      display: inline-block;
-      margin-top: 12px;
-      background-color: var(--green);
-      color: var(--white);
-      text-decoration: none;
-      font-weight: bold;
-      padding: 11px 22px;
-      border-radius: 25px;
-    }
-
-    .recipe-button:hover,
-    .recipe-button:focus {
-      background-color: var(--dark-green);
-    }
-
-    /* Shared footer */
-    footer {
-      background-color: var(--dark-green);
-      color: var(--white);
-      padding: 28px 20px;
-      text-align: center;
-    }
-
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px 20px;
-      margin-bottom: 16px;
-    }
-
-    .footer-nav a {
-      color: var(--white);
-      font-weight: bold;
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    .footer-nav a:hover,
-    .footer-nav a:focus {
-      color: var(--yellow);
-    }
-
-    footer p {
-      max-width: 750px;
-      margin: 8px auto 0;
-      font-size: 12px;
-    }
-
-    /* Phone and tablet layout */
-    @media (max-width: 700px) {
-      header {
-        padding: 20px;
-      }
-
-      .header-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 10px 15px;
-      }
-
-      .page-intro {
-        padding: 40px 20px;
-      }
-
-      .content {
-        padding: 30px 18px 40px;
-      }
-
-      .section-heading {
-        font-size: 25px;
-      }
-
-      .store-grid,
-      .tips-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .store-card {
-        padding: 20px;
-      }
-    }
-  </style>
+<style>
+:root{--cream:#fffaf1;--green:#284b38;--orange:#ed8956;--yellow:#f5d88b;--text:#292e29;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--text);font:16px/1.65 Arial,Helvetica,sans-serif}
+.notice{background:var(--green);color:white;padding:12px 18px;text-align:center;font-size:13px}
+header,main{width:min(1080px,100%);margin:auto;padding:0 24px}
+header{padding-top:22px;padding-bottom:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.logo{color:var(--green);text-decoration:none;font-size:29px;font-weight:900;letter-spacing:-1.2px}
+nav{display:flex;flex-wrap:wrap;gap:10px 18px}
+nav a{color:var(--green);text-decoration:none;font-size:14px;font-weight:bold}
+nav a:hover,main a:hover{text-decoration:underline;color:#b8572e}
+h1,h2,h3{color:var(--green);line-height:1.2}
+h1{font-size:clamp(35px,6vw,58px);letter-spacing:-1.6px;margin:12px 0}
+h2{font-size:29px;letter-spacing:-.5px}
+h3{font-size:21px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--green)}
+.hero{background:var(--yellow);border-radius:24px;padding:44px 36px;margin:14px 0 38px}
+.hero p{max-width:700px;font-size:17px}
+.store{background:white;border:1px solid #e9e1d4;border-radius:16px;padding:23px;margin:20px 0}
+.store-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+.tag{display:inline-block;background:#f9e8d9;color:#814426;border-radius:20px;padding:4px 10px;font-size:12px;font-weight:bold}
+.note,.tip{background:#e9f0e7;border-radius:13px;padding:16px 19px;margin-top:16px}
+.tip{padding:25px;margin:35px 0;background:#fff0df}
+footer{background:var(--green);color:white;padding:30px 24px;margin-top:50px}
+.footer-inner{max-width:1032px;margin:auto}
+footer a{color:white}
+footer .notice{padding:14px 0 0;font-size:13px}
+footer nav{margin:18px 0 8px}
+footer nav a{color:white}
+@media(max-width:700px){
+  header{align-items:flex-start;flex-direction:column}
+  .hero{padding:30px 22px}
+  .store-grid{grid-template-columns:1fr}
+  .store{padding:20px}
+  nav{gap:12px 15px}
+}
+</style>
 </head>
 
 <body>
 
-  <div class="site-notice">
-    This is a fictional website created for educational purposes as part of
-    MKTG:4400 at the University of Iowa. It is not a real business.
-  </div>
+<div class="notice">
+This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
+</div>
 
-  <header>
-    <div class="header-inner">
-      <a class="logo" href="index.html">Campus Cravings</a>
+<header>
+<a class="logo" href="index.html">campus cravings<span style="color:var(--orange)">.</span></a>
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="quick-recipes.html">Quick Recipes</a>
+<a href="meal-prep.html">Meal Prep</a>
+<a href="healthy-budget-meals.html">Healthy on a Budget</a>
+<a href="grocery-guide.html" aria-current="page">Grocery Guide</a>
+</nav>
+</header>
 
-      <nav aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="quick-recipes.html">Quick Recipes</a>
-        <a href="meal-prep.html">Meal Prep</a>
-        <a href="healthy-budget-meals.html">Healthy on a Budget</a>
-        <a href="grocery-guide.html" aria-current="page">Grocery Guide</a>
-      </nav>
-    </div>
-  </header>
+<main>
 
-  <main>
+<section class="hero">
+<div class="eyebrow">Shop smart and save</div>
+<h1>Your Iowa City Grocery Guide</h1>
+<p>Find grocery stores for your student budget, from everyday pantry staples to fresh produce and specialty ingredients. Use the links to check locations and directions before you go.</p>
+</section>
 
-    <section class="page-intro">
-      <span class="label">Shop smart, eat well</span>
-      <h1>The Grocery Guide</h1>
-      <p>
-        Find grocery stores around Iowa City, discover affordable ingredients,
-        and make your college food budget go further.
-      </p>
-    </section>
+<h2>Where to shop</h2>
+<p>Explore these grocery stores and markets around Iowa City and nearby Coralville. Store selection, prices, and hours may vary, so check current details before visiting.</p>
 
-    <section class="content">
-      <h2 class="section-heading">Where to shop</h2>
-      <p class="section-description">
-        Whether you need weekly essentials, fresh produce, or ingredients
-        for a new recipe, explore these grocery stores and markets.
-        Select a link to check locations and directions.
-      </p>
+<div class="store-grid">
 
-      <div class="store-grid">
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">01 · Budget friendly</div><h2>ALDI</h2></div>
+<span class="tag">Affordable staples</span>
+</div>
+<p>Shop for budget-conscious pantry staples, produce, dairy, frozen foods, and snacks.</p>
+<div class="note"><strong>Student tip:</strong> Plan a few meals around ingredients you find at a good price.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=ALDI+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find ALDI on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Budget friendly</span>
-          <h2>ALDI</h2>
-          <p>
-            Shop for affordable pantry staples, produce, dairy products,
-            frozen foods, and snacks.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=ALDI+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find ALDI →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">02 · Everyday essentials</div><h2>Fareway</h2></div>
+<span class="tag">Weekly groceries</span>
+</div>
+<p>Shop for meat, produce, pantry basics, and ingredients for simple weeknight dinners.</p>
+<div class="note"><strong>Student tip:</strong> Compare weekly specials and plan meals around sale items.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Fareway+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Fareway on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Everyday essentials</span>
-          <h2>Fareway</h2>
-          <p>
-            Find meat, produce, pantry basics, and ingredients for easy
-            weeknight dinners.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Fareway+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Fareway →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">03 · One-stop shopping</div><h2>Walmart Supercenter</h2></div>
+<span class="tag">Groceries + essentials</span>
+</div>
+<p>Browse groceries, frozen foods, snacks, kitchen supplies, and household essentials in one trip.</p>
+<div class="note"><strong>Student tip:</strong> Make a list before shopping to help avoid unplanned purchases.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Walmart+Supercenter+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Walmart on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">One-stop shopping</span>
-          <h2>Walmart Supercenter</h2>
-          <p>
-            Browse groceries, frozen foods, snacks, kitchen supplies,
-            and household essentials.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Walmart+Supercenter+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Walmart →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">04 · Full-service grocery</div><h2>Hy-Vee Waterfront</h2></div>
+<span class="tag">Fresh ingredients</span>
+</div>
+<p>A full-service grocery option for produce, pantry ingredients, prepared foods, and everyday cooking needs.</p>
+<div class="note"><strong>Student tip:</strong> Check prices and specials to find options that fit your budget.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Waterfront+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Hy-Vee Waterfront on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Full-service grocery</span>
-          <h2>Hy-Vee Waterfront</h2>
-          <p>
-            Find fresh ingredients, prepared foods, produce, and
-            everyday cooking essentials.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Waterfront+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Hy-Vee Waterfront →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">05 · Full-service grocery</div><h2>Hy-Vee Eastside</h2></div>
+<span class="tag">Weekly groceries</span>
+</div>
+<p>Another option for fresh produce, pantry ingredients, prepared meals, and weekly essentials.</p>
+<div class="note"><strong>Student tip:</strong> Check the current store location and hours before visiting.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Eastside+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Hy-Vee Eastside on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Full-service grocery</span>
-          <h2>Hy-Vee Eastside</h2>
-          <p>
-            Shop for weekly groceries, fresh produce, pantry ingredients,
-            and convenient prepared meals.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Hy-Vee+Eastside+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Hy-Vee Eastside →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">06 · Local and natural</div><h2>New Pioneer Co-op</h2></div>
+<span class="tag">Specialty foods</span>
+</div>
+<p>Explore local products, bulk foods, specialty ingredients, and a variety of food options.</p>
+<div class="note"><strong>Student tip:</strong> Compare bulk prices for ingredients you use regularly.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=New+Pioneer+Co-op+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find New Pioneer on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Local and natural</span>
-          <h2>New Pioneer Co-op</h2>
-          <p>
-            Explore local products, bulk foods, specialty ingredients,
-            and a variety of food options.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=New+Pioneer+Co-op+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find New Pioneer →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">07 · Fresh foods</div><h2>Bread Garden Market</h2></div>
+<span class="tag">Bakery + prepared food</span>
+</div>
+<p>Look for bakery items, prepared foods, and ingredients for convenient lunches or meals.</p>
+<div class="note"><strong>Student tip:</strong> Compare prepared-food costs with making a meal yourself.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Bread+Garden+Market+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Bread Garden on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Fresh foods</span>
-          <h2>Bread Garden Market</h2>
-          <p>
-            Check out bakery items, prepared foods, and ingredients
-            for convenient lunches and meals.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Bread+Garden+Market+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Bread Garden →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">08 · Natural products</div><h2>Natural Grocers</h2></div>
+<span class="tag">Specialty groceries</span>
+</div>
+<p>Browse natural and organic products, snacks, pantry items, and specialty grocery options.</p>
+<div class="note"><strong>Student tip:</strong> Compare prices with other stores if you're shopping on a tight budget.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Natural+Grocers+Coralville+Iowa" target="_blank" rel="noopener noreferrer">Find Natural Grocers on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Natural products</span>
-          <h2>Natural Grocers</h2>
-          <p>
-            Browse natural and organic grocery products, snacks,
-            pantry items, and specialty foods.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Natural+Grocers+Coralville+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Natural Grocers →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">09 · International ingredients</div><h2>Asia Plus Asian Market</h2></div>
+<span class="tag">Pantry variety</span>
+</div>
+<p>Look for noodles, sauces, seasonings, and other ingredients for adding variety to simple meals.</p>
+<div class="note"><strong>Student tip:</strong> Choose versatile sauces and seasonings that work across multiple recipes.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Asia+Plus+Asian+Market+Iowa+City+Iowa" target="_blank" rel="noopener noreferrer">Find Asia Plus on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">International ingredients</span>
-          <h2>Asia Plus Asian Market</h2>
-          <p>
-            Look for noodles, sauces, seasonings, and other ingredients
-            to add variety to your meals.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Asia+Plus+Asian+Market+Iowa+City+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Asia Plus →
-          </a>
-        </article>
+<article class="store">
+<div class="store-top">
+<div><div class="eyebrow">10 · Specialty finds</div><h2>Trader Joe's</h2></div>
+<span class="tag">Convenient options</span>
+</div>
+<p>Explore frozen meals, snacks, sauces, and convenient ingredients for easy student recipes.</p>
+<div class="note"><strong>Student tip:</strong> Check the price per serving and choose products that fit your meal plan.</div>
+<p><a href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+Coralville+Iowa" target="_blank" rel="noopener noreferrer">Find Trader Joe's on Google Maps →</a></p>
+</article>
 
-        <article class="store-card">
-          <span class="store-tag">Specialty finds</span>
-          <h2>Trader Joe's</h2>
-          <p>
-            Explore frozen meals, snacks, sauces, and convenient
-            ingredients for simple student recipes.
-          </p>
-          <a class="store-link"
-             href="https://www.google.com/maps/search/?api=1&query=Trader+Joe%27s+Coralville+Iowa"
-             target="_blank" rel="noopener noreferrer">
-            Find Trader Joe's →
-          </a>
-        </article>
+</div>
 
-      </div>
-    </section>
+<section class="tip">
+<h2>Five ways to stretch your grocery budget</h2>
+<ol>
+<li>Plan meals around ingredients you already have.</li>
+<li>Compare unit prices and store brands.</li>
+<li>Choose frozen vegetables when they offer better value.</li>
+<li>Reuse ingredients across several meals.</li>
+<li>Freeze extra portions before they spoil.</li>
+</ol>
+<p>Need meal ideas? Visit <a href="quick-recipes.html">Quick Recipes</a>, <a href="meal-prep.html">Meal Prep</a>, or <a href="healthy-budget-meals.html">Healthy on a Budget</a>.</p>
+</section>
 
-    <section class="shopping-tips">
-      <div class="tips-inner">
-        <h2 class="section-heading">Make your grocery budget go further</h2>
+</main>
 
-        <div class="tips-grid">
-          <article class="tip-card">
-            <h3>Plan before you shop</h3>
-            <p>
-              Choose a few recipes for the week and make a list
-              to avoid buying ingredients you won't use.
-            </p>
-          </article>
-
-          <article class="tip-card">
-            <h3>Compare prices</h3>
-            <p>
-              Compare store brands and unit prices, and check weekly
-              deals before choosing where to shop.
-            </p>
-          </article>
-
-          <article class="tip-card">
-            <h3>Reuse ingredients</h3>
-            <p>
-              Buy ingredients such as rice, pasta, beans, and vegetables
-              that can be used in several different meals.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="recipe-prompt">
-      <h2>What's cooking?</h2>
-      <p>Turn your groceries into simple, affordable meals.</p>
-      <a class="recipe-button" href="quick-recipes.html">
-        Explore Quick Recipes →
-      </a>
-    </section>
-
-  </main>
-
-  <footer>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="quick-recipes.html">Quick Recipes</a>
-      <a href="meal-prep.html">Meal Prep</a>
-      <a href="healthy-budget-meals.html">Healthy on a Budget</a>
-      <a href="grocery-guide.html">Grocery Guide</a>
-    </nav>
-
-    <p>Campus Cravings — easy meals for college life.</p>
-
-    <p>
-      This is a fictional website created for educational purposes as part of
-      MKTG:4400 at the University of Iowa. It is not a real business.
-    </p>
-  </footer>
+<footer>
+<div class="footer-inner">
+<a class="logo" href="index.html" style="color:white">campus cravings<span style="color:var(--orange)">.</span></a>
+<p>Good food for wherever college life takes you.</p>
+<nav aria-label="Footer navigation">
+<a href="index.html">Home</a>
+<a href="quick-recipes.html">Quick Recipes</a>
+<a href="meal-prep.html">Meal Prep</a>
+<a href="healthy-budget-meals.html">Healthy on a Budget</a>
+<a href="grocery-guide.html">Grocery Guide</a>
+</nav>
+<div class="notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</div>
+</div>
+</footer>
 
 </body>
 </html>
-```
